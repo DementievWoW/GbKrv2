@@ -1,16 +1,24 @@
-# This is a sample Python script.
+import NoteService
+import UserInterface
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+input_from_user = ''
+while input_from_user != '7':
+    UserInterface.menu()
+    input_from_user = input().strip()
+    if input_from_user == '1':
+        NoteService.show('all')
+    if input_from_user == '2':
+        NoteService.add()
+    if input_from_user == '3':
+        NoteService.show('all')
+        NoteService.id_edit_del_show('del')
+    if input_from_user == '4':
+        NoteService.show('all')
+        NoteService.id_edit_del_show('edit')
+    if input_from_user == '5':
+        NoteService.show('date')
+    if input_from_user == '6':
+        NoteService.show('id')
+        NoteService.id_edit_del_show('show')
+    if input_from_user == '7':
+        UserInterface.goodbuy()
